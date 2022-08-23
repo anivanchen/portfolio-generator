@@ -19,7 +19,8 @@ projects:
   name: 
     description: 
     link: 
-    language: 
+    source: 
+    languages: 
     photo: 
 
 skills:

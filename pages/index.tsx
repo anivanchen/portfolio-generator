@@ -1,12 +1,11 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import NextLink from "next/link";
-import { chakra, Flex, Spacer, Grid, GridItem, Heading, Text, Icon, HStack, Link } from "@chakra-ui/react";
+import { chakra, Flex, Spacer, Grid, GridItem, Heading, Text, Icon, HStack, Link, SimpleGrid } from "@chakra-ui/react";
 import { GoLocation, GoMail } from "react-icons/go";
 import { AiFillPhone, AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import Project from "../components/Project";
 import Skill from "../components/Skill";
-
 
 const Home: NextPage = () => {
 
@@ -14,31 +13,87 @@ const Home: NextPage = () => {
         shouldForwardProp: (prop) => ["width", "height", "src", "alt"].includes(prop),
     });
 
-    // const Projects = [
-    //     {
-    //         title: "portfolio-generator",
-    //         description: "A simple portfolio site generated from a YML file built with Next.js with Typescript.",
-    //         photo: "portfolio-generator.png",
-    //         languages: ["TypeScript", "Next.js", "React", "Chakra UI"],
-    //     },
-    //     {
-    //         title: "portfolio-generator",
-    //         description: "A simple portfolio site generated from a YML file built with Next.js with Typescript.",
-    //         photo: "portfolio-generator.png",
-    //         languages: ["TypeScript", "Next.js", "React", "Chakra UI"],
-    //     },
-    //     {
-    //         title: "portfolio-generator",
-    //         description: "A simple portfolio site generated from a YML file built with Next.js with Typescript.",
-    //         photo: "portfolio-generator.png",
-    //         languages: ["TypeScript", "Next.js", "React", "Chakra UI"],
-    //     }
-    // ]
+    const Projects = [
+        {
+            title: "portfolio-generator",
+            description: "A simple portfolio site generated from a YML file built with Next.js with Typescript.",
+            photo: "portfolio-generator.png",
+            languages: ["TypeScript", "Next.js", "React", "Chakra UI"],
+            link: "https://ivanchen.dev",
+            source: "https://github.com/anivanchen/portfolio-generator",
+        },
+        {
+            title: "portfolio-generator",
+            description: "A simple portfolio site generated from a YML file built with Next.js with Typescript.",
+            photo: "portfolio-generator.png",
+            languages: ["TypeScript", "Next.js", "React", "Chakra UI"],
+            link: "https://ivanchen.dev",
+            source: "https://github.com/anivanchen/portfolio-generator",
+        },
+        {
+            title: "portfolio-generator",
+            description: "A simple portfolio site generated from a YML file built with Next.js with Typescript.",
+            photo: "portfolio-generator.png",
+            languages: ["TypeScript", "Next.js", "React", "Chakra UI"],
+            link: "https://ivanchen.dev",
+            source: "https://github.com/anivanchen/portfolio-generator",
+        },
+        {
+            title: "portfolio-generator",
+            description: "A simple portfolio site generated from a YML file built with Next.js with Typescript.",
+            photo: "portfolio-generator.png",
+            languages: ["TypeScript", "Next.js", "React", "Chakra UI"],
+            link: "https://ivanchen.dev",
+            source: "https://github.com/anivanchen/portfolio-generator",
+        },
+        {
+            title: "portfolio-generator",
+            description: "A simple portfolio site generated from a YML file built with Next.js with Typescript.",
+            photo: "portfolio-generator.png",
+            languages: ["TypeScript", "Next.js", "React", "Chakra UI"],
+            link: "https://ivanchen.dev",
+            source: "https://github.com/anivanchen/portfolio-generator",
+        },
+        {
+            title: "portfolio-generator",
+            description: "A simple portfolio site generated from a YML file built with Next.js with Typescript.",
+            photo: "portfolio-generator.png",
+            languages: ["TypeScript", "Next.js", "React", "Chakra UI"],
+            link: "https://ivanchen.dev",
+            source: "https://github.com/anivanchen/portfolio-generator",
+        },
+    ]
+
+    const Skills = [
+        {
+            language: "TypeScript",
+            level: 100,
+        },
+        {
+            language: "TypeScript",
+            level: 80,
+        },
+        {
+            language: "TypeScript",
+            level: 20,
+        },
+        {
+            language: "TypeScript",
+            level: 40,
+        },
+        {
+            language: "TypeScript",
+            level: 69,
+        },
+        {
+            language: "TypeScript",
+            level: 694,
+        },
+    ]
 
     return (
         <>
             <Grid templateColumns="repeat(12, 1fr)" gap={4} minHeight="100vh">
-                {/* <GridItem colSpan={3} backgroundColor="teal.100"> */}
                 <GridItem colSpan={3} bgGradient="linear(to-br, teal.200, purple.200)" shadow="base">
                     <Flex flexDirection="column" justify="top" align="center" padding={12} height="90%">
                         <Photo
@@ -85,25 +140,36 @@ const Home: NextPage = () => {
                     </Flex>
                 </GridItem>
                 <GridItem colSpan={9}>
-                    {/* <Flex flexDirection="column" justify="top" align="center" pl={48} pr={48} pt={12} pb={12} height="100%">
+                    <Flex flexDirection="column" justify="top" align="center" pl={[12, 36, 48]} pr={[12, 36, 48]} pt={12} pb={12}>
                         <Flex flexDirection="column" justify="top" align="left" padding={6} width="100%" height="100%" backgroundColor="gray.100" rounded={8}>
                             <Heading>My Projects</Heading>
                             <Text color="gray.500">Projects on GitHub I have built.</Text>
-                            {Projects.map((project) => (
-                                <Project
-                                    key={project.title}
-                                    title={project.title}
-                                    description={project.description}
-                                    photo={project.photo}
-                                    languages={project.languages}
+                            <SimpleGrid columns={{base: 3, md: 2, sm: 1}} gap={4} mt={4}>
+                                {Projects.map((project) => (
+                                    <Project
+                                        key={project.title}
+                                        title={project.title}
+                                        description={project.description}
+                                        photo={project.photo}
+                                        languages={project.languages}
+                                        link={project.link}
+                                        source={project.source}
+                                    />
+                                ))}
+                            </SimpleGrid>
+                        </Flex>
+                        <Flex flexDirection="column" justify="top" align="left" padding={6} width="100%" height="100%" backgroundColor="gray.100" rounded={8} mt={8}>
+                            <Heading>My Skills</Heading>
+                            <Text color="gray.500">Breakdown of my skills.</Text>
+                            {Skills.map((skill) => (
+                                <Skill
+                                    key={skill.language}
+                                    language={skill.language}
+                                    level={skill.level}
                                 />
                             ))}
                         </Flex>
-                        <Flex flexDirection="column" justify="top" align="left" padding={6} width="100%" height="100%" backgroundColor="gray.100" rounded={8}>
-                            <Heading>My Skills</Heading>
-                            <Text color="gray.500">Programming languages I use regularly.</Text>
-                        </Flex>
-                    </Flex> */}
+                    </Flex>
                 </GridItem>
             </Grid>
         </>

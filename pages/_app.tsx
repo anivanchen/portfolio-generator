@@ -17,6 +17,7 @@ function App({ Component, pageProps }: AppProps) {
                     name="description"
                     content="Ivan Chen's portfolio, built with Next.js and Typescript."
                 />
+                <link rel="icon" href="/favicon.ico" />
             </Head>
             <Component {...pageProps} />
         </ChakraProvider>

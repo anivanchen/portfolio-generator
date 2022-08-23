@@ -1,13 +1,18 @@
-import { Flex, Heading, Text } from "@chakra-ui/react";
+import { Flex, Progress, Text } from "@chakra-ui/react";
 import { NextComponentType } from "next";
 
-const Skills: NextComponentType = () => {
+type Props = {
+    language: string;
+    level: number;
+}
+
+const Skill: React.FC<Props> = ({ language, level }) => {
     return (
-        <Flex flexDirection="column" justify="center" align="center" padding={12} height="100%">
-            <Heading>My Skills</Heading>
-            <Text color="gray.500">Programming languages I use.</Text>
+        <Flex flexDirection="row" justify="left" align="center" gap={8} mt={4}>
+            <Text>{language}</Text>
+            <Progress value={level} colorScheme="purple" width="100%" outline="1px solid lightgray" rounded={8} />
         </Flex>
     );
 }
 
-export default Skills;
+export default Skill;
