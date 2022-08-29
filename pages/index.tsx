@@ -2,10 +2,12 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import NextLink from "next/link";
 import { chakra, Flex, Spacer, Grid, GridItem, Heading, Text, Icon, HStack, Link, SimpleGrid } from "@chakra-ui/react";
-import { GoLocation, GoMail } from "react-icons/go";
-import { AiFillPhone, AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { GoLocation, GoMail, GoLinkExternal } from "react-icons/go";
+import { AiFillPhone, AiFillGithub, AiFillLinkedin, AiFillFacebook, AiFillInstagram, AiFillTwitterSquare } from "react-icons/ai";
 import Project from "../components/Project";
 import Skill from "../components/Skill";
+
+import data from "../config/config.yml";
 
 const Home: NextPage = () => {
 
@@ -13,83 +15,26 @@ const Home: NextPage = () => {
         shouldForwardProp: (prop) => ["width", "height", "src", "alt"].includes(prop),
     });
 
-    const Projects = [
-        {
-            title: "portfolio-generator",
-            description: "A simple portfolio site generated from a YML file built with Next.js with Typescript.",
-            photo: "portfolio-generator.png",
-            languages: ["TypeScript", "Next.js", "React", "Chakra UI"],
-            link: "https://ivanchen.dev",
-            source: "https://github.com/anivanchen/portfolio-generator",
-        },
-        {
-            title: "portfolio-generator",
-            description: "A simple portfolio site generated from a YML file built with Next.js with Typescript.",
-            photo: "portfolio-generator.png",
-            languages: ["TypeScript", "Next.js", "React", "Chakra UI"],
-            link: "https://ivanchen.dev",
-            source: "https://github.com/anivanchen/portfolio-generator",
-        },
-        {
-            title: "portfolio-generator",
-            description: "A simple portfolio site generated from a YML file built with Next.js with Typescript.",
-            photo: "portfolio-generator.png",
-            languages: ["TypeScript", "Next.js", "React", "Chakra UI"],
-            link: "https://ivanchen.dev",
-            source: "https://github.com/anivanchen/portfolio-generator",
-        },
-        {
-            title: "portfolio-generator",
-            description: "A simple portfolio site generated from a YML file built with Next.js with Typescript.",
-            photo: "portfolio-generator.png",
-            languages: ["TypeScript", "Next.js", "React", "Chakra UI"],
-            link: "https://ivanchen.dev",
-            source: "https://github.com/anivanchen/portfolio-generator",
-        },
-        {
-            title: "portfolio-generator",
-            description: "A simple portfolio site generated from a YML file built with Next.js with Typescript.",
-            photo: "portfolio-generator.png",
-            languages: ["TypeScript", "Next.js", "React", "Chakra UI"],
-            link: "https://ivanchen.dev",
-            source: "https://github.com/anivanchen/portfolio-generator",
-        },
-        {
-            title: "portfolio-generator",
-            description: "A simple portfolio site generated from a YML file built with Next.js with Typescript.",
-            photo: "portfolio-generator.png",
-            languages: ["TypeScript", "Next.js", "React", "Chakra UI"],
-            link: "https://ivanchen.dev",
-            source: "https://github.com/anivanchen/portfolio-generator",
-        },
-    ]
+    const Projects = data.projects;
+    const Skills = data.skills;
+    const Socials = data.socials;
 
-    const Skills = [
-        {
-            language: "TypeScript",
-            level: 100,
-        },
-        {
-            language: "TypeScript",
-            level: 80,
-        },
-        {
-            language: "TypeScript",
-            level: 20,
-        },
-        {
-            language: "TypeScript",
-            level: 40,
-        },
-        {
-            language: "TypeScript",
-            level: 69,
-        },
-        {
-            language: "TypeScript",
-            level: 694,
-        },
-    ]
+    function getSocialIcon(social: string) {
+        switch (social) {
+            case "github":
+                return <Icon as={AiFillGithub} />;
+            case "linkedin":
+                return <Icon as={AiFillLinkedin} />;
+            case "facebook":
+                return <Icon as={AiFillFacebook} />;
+            case "instagram":
+                return <Icon as={AiFillInstagram} />;
+            case "twitter":
+                return <Icon as={AiFillTwitterSquare} />;
+            default:
+                return <Icon as={GoLinkExternal} />;
+        }
+    }
 
     return (
         <>
@@ -103,39 +48,36 @@ const Home: NextPage = () => {
                             height="256px"
                             borderRadius="50%"
                         />
-                        <Heading mt={4}>Ivan Chen</Heading>
-                        <Text fontSize="lg">Software Engineer</Text>
+                        <Heading mt={4}>{data.personal.name}</Heading>
+                        <Text fontSize="lg">{data.personal.bio}</Text>
+                        <Text fontSize="sm">Currently working @ {data.personal.company}</Text>
 
                         <Heading fontSize="lg" mt={8} mb={2}>Contact</Heading>
                         <HStack>
                             <Icon as={GoMail} />
-                            <NextLink href="mailto:me@ivanchen.dev" passHref>
-                                <Link>me@ivanchen.dev</Link>
+                            <NextLink href={"mailto:" + data.contact.email} passHref>
+                                <Link>{data.contact.email}</Link>
                             </NextLink>
                         </HStack>
                         <HStack>
                             <Icon as={AiFillPhone} />
-                            <Text>+19177039398</Text>
+                            <Text>+{data.contact.phone}</Text>
                         </HStack>
 
                         <Heading fontSize="lg" mt={8} mb={2}>Socials</Heading>
-                        <HStack>
-                            <Icon as={AiFillGithub} />
-                            <NextLink href="https://github.com/anivanchen" passHref>
-                                <Link>@anivanchen</Link>
-                            </NextLink>
-                        </HStack>
-                        <HStack>
-                            <Icon as={AiFillLinkedin} />
-                            <NextLink href={"https://www.linkedin.com/in/anivanchen"} passHref>
-                                <Link>@anivanchen</Link>
-                            </NextLink>
-                        </HStack>
+                        {Socials.map((social: any) => (
+                           <HStack key={social.platform}>
+                                {getSocialIcon(social.platform)}
+                                <NextLink href={"https://" + social.platform + ".com/" + social.user} passHref>
+                                    <Link>{social.user}</Link>
+                                </NextLink>
+                            </HStack> 
+                        ))}
                     </Flex>
                     <Flex justify="center" align="center" height="10%">
                         <HStack>
                             <Icon as={GoLocation} />
-                            <Text>New York, NY</Text>
+                            <Text>{data.personal.location}</Text>
                         </HStack>
                     </Flex>
                 </GridItem>
@@ -145,7 +87,7 @@ const Home: NextPage = () => {
                             <Heading>My Projects</Heading>
                             <Text color="gray.500">Projects on GitHub I have built.</Text>
                             <SimpleGrid columns={{base: 3, md: 2, sm: 1}} gap={4} mt={4}>
-                                {Projects.map((project) => (
+                                {Projects.map((project: any) => (
                                     <Project
                                         key={project.title}
                                         title={project.title}
@@ -161,7 +103,7 @@ const Home: NextPage = () => {
                         <Flex flexDirection="column" justify="top" align="left" padding={6} width="100%" height="100%" backgroundColor="gray.100" rounded={8} mt={8}>
                             <Heading>My Skills</Heading>
                             <Text color="gray.500">Breakdown of my skills.</Text>
-                            {Skills.map((skill) => (
+                            {Skills.map((skill: any) => (
                                 <Skill
                                     key={skill.language}
                                     language={skill.language}

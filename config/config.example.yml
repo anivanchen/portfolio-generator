@@ -1,0 +1,74 @@
+personal:
+  name: Ivan Chen
+  bio: Software Engineer
+  company: StuyPulse
+  location: New York, NY
+
+contact:
+  email: me@ivanchen.dev
+  phone: 9177039398
+
+socials: 
+  - platform: github
+    user: anivanchen
+  - platform: linkedin
+    user: anivanchen
+  - platform: facebook
+    user: anivanchen
+  - platform: instagram
+    user: anivanchen
+  - platform: twitter
+    user: _anivanchen
+
+projects:
+  - name: portfolio
+    description: A simple portfolio site generated from a YML file built with Next.js with Typescript.
+    link: https://ivanchen.dev
+    source: https://github.com/anivanchen/portfolio-generator
+    languages: ["TypeScript", "Next.js", "React", "Chakra UI"]
+    photo: portfolio-generator.png
+  - name: portfolio
+    description: A simple portfolio site generated from a YML file built with Next.js with Typescript.
+    link: https://ivanchen.dev
+    source: https://github.com/anivanchen/portfolio-generator
+    languages: ["TypeScript", "Next.js", "React", "Chakra UI"]
+    photo: portfolio-generator.png
+  - name: portfolio
+    description: A simple portfolio site generated from a YML file built with Next.js with Typescript.
+    link: https://ivanchen.dev
+    source: https://github.com/anivanchen/portfolio-generator
+    languages: ["TypeScript", "Next.js", "React", "Chakra UI"]
+    photo: portfolio-generator.png
+  - name: portfolio
+    description: A simple portfolio site generated from a YML file built with Next.js with Typescript.
+    link: https://ivanchen.dev
+    source: https://github.com/anivanchen/portfolio-generator
+    languages: ["TypeScript", "Next.js", "React", "Chakra UI"]
+    photo: portfolio-generator.png
+  - name: portfolio
+    description: A simple portfolio site generated from a YML file built with Next.js with Typescript.
+    link: https://ivanchen.dev
+    source: https://github.com/anivanchen/portfolio-generator
+    languages: ["TypeScript", "Next.js", "React", "Chakra UI"]
+    photo: portfolio-generator.png
+  - name: portfolio
+    description: A simple portfolio site generated from a YML file built with Next.js with Typescript.
+    link: https://ivanchen.dev
+    source: https://github.com/anivanchen/portfolio-generator
+    languages: ["TypeScript", "Next.js", "React", "Chakra UI"]
+    photo: portfolio-generator.png
+
+skills:
+  - language: TypeScript
+    level: 20
+  - language: TypeScript
+    level: 69
+  - language: TypeScript
+    level: 40
+  - language: TypeScript
+    level: 89
+  - language: TypeScript
+    level: 100
+  - language: TypeScript
+    level: 694
+    

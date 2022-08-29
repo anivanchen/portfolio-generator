@@ -1,22 +1,30 @@
+# See ./config.example.yml for an example config file
+# Do not leave any fields blank.
+
 personal:
-  name: Ivan Chen
-  bio: Software Engineer
-  company: StuyPulse
-  location: New York, NY
+  name: 
+  bio: 
+  company: 
+  location: 
 
 contact:
-  email: me@ivanchen.dev
-  phone: 9177039398
+  email: 
+  phone: 
 
 socials: 
-  github_username: anivanchen
-  linkedin_username: anivanchen
-  facebook_username: anivanchen 
-  instagram_username: anivanchen
-  twitter_username: _anivanchen
+  - platform: github
+    user: 
+  - platform: linkedin
+    user: 
+  - platform: facebook
+    user: 
+  - platform: instagram
+    user: 
+  - platform: twitter
+    user: 
 
 projects:
-  name: 
+  - name: 
     description: 
     link: 
     source: 
@@ -24,9 +32,6 @@ projects:
     photo: 
 
 skills:
-  language: Python
-  language: TypeScript
-  language: JavaScript
-  language: Java
-  language: HTML
-  language: CSS
+  - language: 
+    level: 
+    

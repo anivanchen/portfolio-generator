@@ -21,12 +21,12 @@ const Project: React.FC<Props> = ({ title, description, photo, languages, link, 
 
     return (
         <GridItem>
-            <Flex flexDirection="column" justify="top" align="left" width="100%" height="300px" backgroundColor="gray.200" rounded={8}>
+            <Flex flexDirection="column" justify="top" align="left" width="100%" height="320px" backgroundColor="gray.200" rounded={8}>
                 <Cover src={"/repo-images/" + photo} alt={title} width="100%" height="120px" objectFit="cover" rounded={8} />
                 <Flex flexDirection="column" justify="top" align="left" width="100%" padding={4}>
                     <Heading size="md">{title}</Heading>
                     <Text>{description}</Text>
-                    <Text color="gray.500" mt={2}>{languages.join(" ")}</Text>
+                    <Text color="gray.500" mt={2}>{languages.join(", ")}</Text>
                     <Flex flexDirection="row" justify="left" align="center" gap={2} mt={2}>
                         <HStack>
                             <Icon as={GoLink} />
