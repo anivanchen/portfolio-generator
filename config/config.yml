@@ -6,6 +6,7 @@ personal:
   bio: 
   company: 
   location: 
+  photo:  
 
 contact:
   email: 
@@ -35,3 +36,10 @@ skills:
   - language: 
     level: 
     
+experience:
+  - company: 
+    title: 
+    time: 
+    description: 
+    work:
+      -  

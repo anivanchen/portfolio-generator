@@ -3,6 +3,7 @@ personal:
   bio: Software Engineer
   company: StuyPulse
   location: New York, NY
+  photo: https://avatars.githubusercontent.com/u/51217025
 
 contact:
   email: me@ivanchen.dev
@@ -72,3 +73,28 @@ skills:
   - language: TypeScript
     level: 694
     
+experiences:
+  - company: StuyPulse
+    title: Lead Software Engineer
+    time: May 2022 - Current
+    description: StuyPulse is a robotics team dedicated to spreading STEM and advancing the knowledge of robotics in our community.
+    work: 
+      - Lead a team of engineers to program a robot.
+      - Lead a team of engineers to program a robot.
+      - Lead a team of engineers to program a robot.
+  - company: StuyPulse
+    title: Lead Software Engineer
+    time: May 2022 - Current
+    description: StuyPulse is a robotics team dedicated to spreading STEM and advancing the knowledge of robotics in our community.
+    work:
+      - Lead a team of engineers to program a robot.
+      - Lead a team of engineers to program a robot.
+      - Lead a team of engineers to program a robot.
+  - company: StuyPulse
+    title: Lead Software Engineer
+    time: May 2022 - Current
+    description: StuyPulse is a robotics team dedicated to spreading STEM and advancing the knowledge of robotics in our community.
+    work:
+      - Lead a team of engineers to program a robot.
+      - Lead a team of engineers to program a robot.
+      - Lead a team of engineers to program a robot.

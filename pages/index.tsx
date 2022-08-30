@@ -1,13 +1,15 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import NextLink from "next/link";
-import { chakra, Flex, Spacer, Grid, GridItem, Heading, Text, Icon, HStack, Link, SimpleGrid } from "@chakra-ui/react";
+import { chakra, Flex, Spacer, Grid, GridItem, Heading, Text, Icon, HStack, Link, SimpleGrid, List, ListItem, UnorderedList } from "@chakra-ui/react";
 import { GoLocation, GoMail, GoLinkExternal } from "react-icons/go";
 import { AiFillPhone, AiFillGithub, AiFillLinkedin, AiFillFacebook, AiFillInstagram, AiFillTwitterSquare } from "react-icons/ai";
 import Project from "../components/Project";
 import Skill from "../components/Skill";
+import Experience  from "../components/Experience";
 
 import data from "../config/config.yml";
+import Footer from "../components/Footer";
 
 const Home: NextPage = () => {
 
@@ -15,9 +17,10 @@ const Home: NextPage = () => {
         shouldForwardProp: (prop) => ["width", "height", "src", "alt"].includes(prop),
     });
 
+    const Socials = data.socials;
     const Projects = data.projects;
     const Skills = data.skills;
-    const Socials = data.socials;
+    const Experiences = data.experiences;
 
     function getSocialIcon(social: string) {
         switch (social) {
@@ -38,11 +41,11 @@ const Home: NextPage = () => {
 
     return (
         <>
-            <Grid templateColumns="repeat(12, 1fr)" gap={4} minHeight="100vh">
+            <Grid templateColumns="repeat(12, 1fr)" minHeight="100vh">
                 <GridItem colSpan={3} bgGradient="linear(to-br, teal.200, purple.200)" shadow="base">
-                    <Flex flexDirection="column" justify="top" align="center" padding={12} height="90%">
+                    <Flex flexDirection="column" justify="top" align="center" padding={12}>
                         <Photo
-                            src="https://avatars.githubusercontent.com/u/51217025"
+                            src={data.personal.photo}
                             alt="pfp"
                             width="256px"
                             height="256px"
@@ -50,7 +53,11 @@ const Home: NextPage = () => {
                         />
                         <Heading mt={4}>{data.personal.name}</Heading>
                         <Text fontSize="lg">{data.personal.bio}</Text>
-                        <Text fontSize="sm">Currently working @ {data.personal.company}</Text>
+                        <Text fontSize="sm">Currently working @ {" "}
+                            <NextLink href={"https://stuypulse.com"} passHref>
+                                <Link>{data.personal.company}</Link>
+                            </NextLink>
+                        </Text>
 
                         <Heading fontSize="lg" mt={8} mb={2}>Contact</Heading>
                         <HStack>
@@ -81,6 +88,7 @@ const Home: NextPage = () => {
                         </HStack>
                     </Flex>
                 </GridItem>
+
                 <GridItem colSpan={9}>
                     <Flex flexDirection="column" justify="top" align="center" pl={[12, 36, 48]} pr={[12, 36, 48]} pt={12} pb={12}>
                         <Flex flexDirection="column" justify="top" align="left" padding={6} width="100%" height="100%" backgroundColor="gray.100" rounded={8}>
@@ -111,7 +119,24 @@ const Home: NextPage = () => {
                                 />
                             ))}
                         </Flex>
+                        <Flex flexDirection="column" justify="top" align="left" padding={6} width="100%" height="100%" backgroundColor="gray.100" rounded={8} mt={8}>
+                            <Heading>My Experience</Heading>
+                            <Text color="gray.500">My past and current experience.</Text>
+                            <SimpleGrid columns={{ base: 3, md: 2, sm: 1 }} gap={4} mt={4}>
+                                {Experiences.map((experience: any) => (
+                                    <Experience
+                                        key={experience.title}
+                                        company={experience.company}
+                                        title={experience.title}
+                                        time={experience.time}
+                                        description={experience.description}
+                                        work={experience.work}
+                                    />
+                                ))}
+                            </SimpleGrid>
+                        </Flex>
                     </Flex>
+                    <Footer />
                 </GridItem>
             </Grid>
         </>
