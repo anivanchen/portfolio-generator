@@ -2,44 +2,91 @@
 # Do not leave any fields blank.
 
 personal:
-  name: 
-  bio: 
-  company: 
-  location: 
-  photo:  
+  name: Ivan Chen
+  bio: Software Engineer
+  company: StuyPulse
+  location: New York, NY
+  photo: https://avatars.githubusercontent.com/u/51217025
 
 contact:
-  email: 
-  phone: 
+  email: me@ivanchen.dev
+  phone: 9177039398
 
 socials: 
   - platform: github
-    user: 
+    user: anivanchen
   - platform: linkedin
-    user: 
+    user: anivanchen
   - platform: facebook
-    user: 
+    user: anivanchen
   - platform: instagram
-    user: 
+    user: anivanchen
   - platform: twitter
-    user: 
+    user: _anivanchen
 
 projects:
-  - name: 
-    description: 
-    link: 
-    source: 
-    languages: 
-    photo: 
+  - name: Personal Website
+    description: My personal website. Redesigned with TypeScript and Next.js and deployed to Vercel.
+    link: https://ivanchen.dev
+    source: https://github.com/anivanchen/anivanchen.github.io
+    languages: ["Typescript", "Next.js"]
+    photo: portfolio-generator.png
+  - name: Excelsior
+    description: StuyPulse's 2022 FRC Robot Code
+    link: https://github.com/StuyPulse/Excelsior
+    source: https://github.com/StuyPulse/Excelsior
+    languages: ["Java", "WPILib", "StuyLib"]
+    photo: portfolio-generator.png
 
 skills:
-  - language: 
-    level: 
+  - language: TypeScript
+    level: 85
+  - language: JavaScript
+    level: 90
+  - language: Python
+    level: 90
+  - language: Java
+    level: 70
+  - language: HTML
+    level: 95
+  - language: CSS
+    level: 90
     
-experience:
-  - company: 
-    title: 
-    time: 
-    description: 
+experiences:
+  - company: StuyPulse
+    title: President of Software Engineering
+    time: May 2022 - Current
+    description: StuyPulse is a robotics team dedicated to spreading STEM and advancing the knowledge of robotics in our community.
     work:
-      -  
+      - Lead a team of software engineers to program a robot.
+      - Help develop a new teaching system.
+      - Work on logistical work.
+  - company: StuyPulse
+    title: Software Engineer
+    time: October 2020 - May 2022
+    description: StuyPulse is a robotics team dedicated to spreading STEM and advancing the knowledge of robotics in our community.
+    work:
+      - Helped work on teaching new members.
+      - Co-led a group to program a robot mechanism.
+      - Worked to tune robot autonomous routines in the lab and at competitions.
+  - company: Stuyvesant Junior Caucus
+    title: Director of IT
+    time: July 2022 - Current
+    description: The Junior caucus works to organize events and aid the student body in being more productive.
+    work:
+      - Developed a new iteration of the Junior Caucus website.
+      - Lead the development of a search engine where students can look up any information about the school and its staff.
+  - company: Stuyvesant Sophomore Caucus
+    title: Director of IT
+    time: October 2021 - July 2022
+    description: The Sophomore caucus works to organize events and aid the student body in being more productive.
+    work:
+      - Optimized Sophomore caucus website loading times.
+      - Redesigned CMS for a better and easier experience.
+  - company: The Stuyvesant Spectator
+    title: Web Developer & Designer
+    time: November 2021 - Current
+    description: The Stuyvesant Spectator aims to be the voice of the student body and is a biweekly newspaper.
+    work:
+      - Redesign the website using modern design standards.
+      - Work to build the redesign with a more organized CMS and modern technologies like Next.js with Typescript and MongoDB.
