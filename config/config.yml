@@ -30,13 +30,25 @@ projects:
     link: https://ivanchen.dev
     source: https://github.com/anivanchen/anivanchen.github.io
     languages: ["Typescript", "Next.js"]
-    photo: portfolio-generator.png
+    photo: personal-site.png
   - name: Excelsior
     description: StuyPulse's 2022 FRC Robot Code
     link: https://github.com/StuyPulse/Excelsior
     source: https://github.com/StuyPulse/Excelsior
     languages: ["Java", "WPILib", "StuyLib"]
+    photo: nyc-2022.jpeg
+  - name: portfolio-generator
+    description: A simple portfolio site generated from a YML file built with Next.js with Typescript.
+    link: https://anivanchen.vercel.app/portfolio-generator
+    source: https://github.com/anivanchen/portfolio-generator
+    languages: ["Typescript", "Next.js", "Chakra UI", "next-yaml"]
     photo: portfolio-generator.png
+  - name: stuyspec-rewrite
+    description: The rewrite of The Spectator's website
+    link: ttps://stuyspecrewrite.vercel.app/
+    source: https://github.com/stuyspec/stuyspec-rewrite
+    languages: ["Typescript", "Next.js", "MongoDB"]
+    photo: stuyspec-rewrite.png
 
 skills:
   - language: TypeScript
