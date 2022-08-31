@@ -7,9 +7,9 @@ import { AiFillPhone, AiFillGithub, AiFillLinkedin, AiFillFacebook, AiFillInstag
 import Project from "../components/Project";
 import Skill from "../components/Skill";
 import Experience  from "../components/Experience";
-
-import data from "../config/config.yml";
 import Footer from "../components/Footer";
+
+const data = require("../config/config.yml");
 
 const Home: NextPage = () => {
 
