@@ -3,7 +3,7 @@ import Head from "next/head";
 
 import * as React from 'react'
 import { ChakraProvider } from "@chakra-ui/react";
-import theme from "./theme";
+import theme from "../config/theme";
 
 function App({ Component, pageProps }: AppProps) {
   
